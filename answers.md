@@ -1,8 +1,0 @@
-## Question 1: The Vector Conflict
-The code generated a positive similarity score because CountVectorizer relies on a Bag-of-Words (BoW) model, which evaluates token frequency while ignoring semantic context. Because both sentences contain the token "light," the vectorizer assigns them overlapping mathematical indices. Consequently, the dot product calculates a false similarity based purely on shared vocabulary, completely missing the fact that the two sentences have entirely different meanings.
-
-## Question 2: The Context Blindspot
-The primary bottleneck for traditional search engines and chatbots is that the Bag-of-Words approach treats words as static, isolated features. It cannot account for word order, syntax, or intent. As a result, it fails to handle polysemy—where a single word like "light" carries multiple meanings depending on its usage. The critical linguistic property lost here is contextual semantics, which prevents the system from truly understanding natural language.
-
-## Question 3: The GenAI Architectural Fix
-Modern Large Language Models (LLMs) like GPT and LLaMA resolve this limitation using context-aware embeddings driven by self-attention mechanisms. Instead of assigning a fixed vector to a word, the transformer architecture allows each token to interact with its surrounding text. Through this process, the word "light" in a sentence about weight yields a completely different mathematical representation than "light" in a sentence about illumination. By capturing these dynamic relationships, self-attention successfully maps the true semantic intent of the language.
